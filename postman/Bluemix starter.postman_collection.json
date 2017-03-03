@@ -13,7 +13,7 @@
 		{
 			"id": "81da9d25-4861-5890-78bb-2e3f9838213b",
 			"headers": "",
-			"url": "{{URL}}/test",
+			"url": "tc-ashahmali-01hw.mybluemix.net/api/test",
 			"pathVariables": {},
 			"preRequestScript": null,
 			"method": "GET",

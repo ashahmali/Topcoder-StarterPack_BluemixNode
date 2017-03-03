@@ -3,6 +3,6 @@ applications:
   memory: 256M
   instances: 1
   domain: eu-gb.mybluemix.net
-  name: sky-bluemix-starter-2
-  host: sky-bluemix-starter-2
+  name: TopcoderBluemixhw02
+  host: tc-ashahmali-02hw
   disk_quota: 1024M

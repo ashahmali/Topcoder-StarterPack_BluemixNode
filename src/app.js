@@ -15,6 +15,8 @@ import logger from './common/logger';
 
 const app = express();
 app.set('port', config.PORT);
+//app.set('views', __dirname + '/views');
+//app.set('view engine', 'jade');
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -27,6 +29,29 @@ const apiRouter = new express.Router();
 loadRoutes(apiRouter, routes);
 
 app.use('/api', apiRouter);
+
+app.get('/', function(req, res){
+	//res.send('Hello World');
+	var options = {
+    root: __dirname + '/views/',
+    dotfiles: 'deny',
+    headers: {
+        'x-timestamp': Date.now(),
+        'x-sent': true
+    }
+  };
+
+  var fileName = 'index.html';
+  res.sendFile(fileName, options, function (err) {
+    if (err) {
+      next(err);
+    } else {
+      console.log('Sent:', fileName);
+    }
+  });
+	//res.sendFile('views/index.html');
+});
+
 
 app.use(errorHandler({
   log: ({err, req, body}) => {

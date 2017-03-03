@@ -25,3 +25,15 @@ paths:
             properties:
               success:
                 type: boolean
+  /translate
+    get:
+      description: Translate method
+
+      responses:
+        200:
+          description: successful operation
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
