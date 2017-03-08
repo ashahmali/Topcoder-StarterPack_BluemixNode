@@ -14,15 +14,33 @@
 
 <body>
     <div class="container">
-        <h1>Welcome.</h1>
-        <div id="nameInput" class="input-group-lg center-block helloInput">
-            <p class="lead">What is your name?</p>
-            <input id="user_name" type="text" class="form-control" placeholder="name" aria-describedby="sizing-addon1" value="" />
+        <div class="row">
+           <form class="form-horizontal" id="theForm">
+            <h1>Cognitive Comapny</h1>
+            <div class="form-group">
+                <label for="" class="col-lg-2 control-label">Enter Source String</label>
+                <div class="col-lg-10">
+                <textarea name="sourceString" id="srcString" rows="3" class="form-control"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-lg-2 control-label">Source Language</label>
+                <div class="col-lg-10">
+                 <select name="dstLanguage" id="dlanguage" class="form-control">
+                    <option value="es">Spanish</option>
+                    <option value="de">Germany</option>
+                </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">Translate & Analyze</button>
+                </div>
+            </div>
+            </form>
         </div>
-        <p id="response" class="lead text-center"></p>
-
-        <p id="databaseNames" class="lead text-center"></p>
     </div>
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -48,7 +66,7 @@
             }
         });
         //Retreive all the visitors from the database
-        function getNames(){
+        function getHistory(){
           $.get("./api/visitors")
               .done(function(data) {
                   if(data.length > 0) {

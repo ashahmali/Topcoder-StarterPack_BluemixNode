@@ -31,7 +31,6 @@ loadRoutes(apiRouter, routes);
 app.use('/api', apiRouter);
 
 app.get('/', function(req, res){
-	//res.send('Hello World');
 	var options = {
     root: __dirname + '/views/',
     dotfiles: 'deny',
